@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<title>The Illusion of Intelligence | Rajat Kumar Mohanty</title>
+
+<meta name="description" content="AI sounds intelligent—but it isn’t. Discover how AI deceives, why humans fall for it, and how to stay intellectually independent.">
+<meta name="description" content="A critical examination of AI — why it appears intelligent, how it deceives, and how to stay intellectually independent.">
+<meta name="keywords" content="AI illusion, AI deception, can AI think, AI hallucination explained, limits of AI">
+
+<link rel="canonical" href="https://yourusername.github.io/">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding-bottom: 80px; /* prevents sticky overlap */
+  background: #fafafa;
+  color: #222;
+  line-height: 1.7;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* HERO */
+.hero {
+  background: #ffffff;
+  padding: 24px 20px;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-image img {
+  width: 200px;
+  border: 1px solid #ddd;
+  margin-bottom: 4px;
+}
+
+.hero-text {
+  text-align: center;
+}
+
+.hero-text p {
+  margin: 8px 0;
+}
+
+/* DESKTOP HERO */
+@media (min-width: 768px) {
+  .hero-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .hero-text {
+    text-align: left;
+    max-width: 500px;
+  }
+
+  .hero-image img {
+    width: 240px;
+  }
+}
+
+/* HEADINGS */
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 6px;
+}
+
+h2 {
+  margin-top: 20px;
+  font-size: 1.5em;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+
+h3 {
+  margin-top: 14px;
+  font-size: 1.2em;
+   margin-bottom: 4px;
+}
+
+/* TEXT */
+p {
+  margin: 6px 0;
+}
+
+.highlight {
+  font-weight: bold;
+}
+
+/* SECTIONS */
+.section {
+  margin-top: 20px;
+  margin-bottom: 6px;
+}
+
+/* LISTS */
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+/* CTA BUTTON */
+.cta {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: #ff9900;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: opacity 0.2s ease;
+}
+
+.cta:hover {
+  opacity: 0.9;
+}
+/* CTA BLOCK */
+.hero-cta-block {
+  margin-top: 10px;
+}
+
+.subnote {
+  font-size: 0.9em;
+  color: #555;
+  margin: 4px 0;
+}
+/* STICKY CTA */
+.sticky-cta {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff9900;
+  color: #000;
+  padding: 10px 12px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 999;
+  opacity: 0.95;
+}
+
+/* DESKTOP STICKY */
+@media (min-width: 768px) {
+  .sticky-cta {
+    right: 20px;
+    left: auto;
+    transform: none;
+    border-radius: 6px;
+  }
+}
+
+/* PREVIEW GROUP */
+.preview-group details {
+  margin-top: 8px;
+}
+.preview-group details:first-child {
+  margin-top: 0;     /* no gap above first chapter */
+}
+/* TOGGLE SUMMARY */
+.preview-toggle summary {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.05em;
+  padding: 3px 0;
+  list-style: none; /* remove default arrow (Firefox) */
+}
+
+/* REMOVE DEFAULT MARKER (Chrome/Safari) */
+.preview-toggle summary::-webkit-details-marker {
+  display: none;
+}
+
+/* CUSTOM ARROW */
+.preview-toggle summary::before {
+  content: "▶";
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.2s ease;
+}
+
+/* ROTATE ARROW WHEN OPEN */
+.preview-toggle[open] summary::before {
+  transform: rotate(90deg);
+}
+
+/* PREVIEW BOX */
+.preview-box {
+  background: #ffffff;
+  border-left: 4px solid #ff9900;
+  padding: 12px 14px;
+  margin-top: 6px;
+  line-height: 1.5;
+  font-size: 0.95em;
+}
+/* Reduce paragraph spacing inside preview only */
+.preview-box p {
+  margin: 6px 0;        /* was inheriting 10px */
+}
+/* Highlight line tighter + emphasis */
+.preview-box .highlight {
+  margin-top: 8px;
+  font-weight: bold;
+}
+/* FOOTER */
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 16px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+</style>
+
+<!-- SCHEMA -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Book",
+"name": "Illusion of Intelligence",
+"author": {
+  "@type": "Person",
+  "name": "Rajat Kumar Mohanty"
+},
+"description": "A critical exploration of AI illusion and human cognitive vulnerability.",
+"offers": {
+  "@type": "Offer",
+  "url": "https://www.amazon.in/dp/B0GGWJFRQ5"
+}
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-container">
+
+    <!-- LEFT: BOOK IMAGE -->
+    <div class="hero-image">
+  <img src="/home/rmohanty/moWorkspaceE/illusion_of_intelligence/github_illusion/imgs/ebook-coverpage-illusion-300.jpg" alt="Illusion of Intelligence Book Cover">
+    </div>
+
+
+  <!-- RIGHT: TEXT -->
+<div class="hero-text">
+
+  <h1>AI Sounds Intelligent.</h1>
+  <p class="highlight">It Understands Nothing about the Real World.</p>
+
+  <div class="hero-cta-block">
+    <a class="cta" href="https://www.amazon.in/dp/B0GGWJFRQ5" target="_blank">
+      👉 View on Amazon
+    </a>
+
+    <p class="subnote">📱 Available on Amazon Kindle</p>
+    <p class="subnote">📘 Paperback edition coming soon</p>
+  </div>
+
+</div>
+  </div>
+
+</div>
+<div class="container">
+
+<!-- CORE -->
+<div class="section">
+<h2>The Reality of AI</h2>
+<p>
+Language can simulate intelligence. It cannot create it.
+</p>
+</div>
+
+<!-- EXPOSES -->
+<div class="section">
+<h2>⚠️ What This Book Exposes</h2>
+<ul>
+<li>Why AI can sound confident without knowing anything</li>
+<li>Why humans instinctively mistake fluency for intelligence</li>
+<li>Why “AI hallucinations” are not bugs — but structural outcomes</li>
+<li>How even experts get misled by AI systems</li>
+<li>Why more advanced AI can deepen — not reduce — the illusion</li>
+</ul>
+</div>
+
+<!-- LEARN -->
+<div class="section">
+<h2>📘 What You Will Learn</h2>
+<ul>
+<li>What AI actually is (and is not)</li>
+<li>Why humans misinterpret it</li>
+<li>Where it fails in real-world decisions</li>
+<li>How to stay intellectually independent</li>
+</ul>
+</div>
+
+<!-- ✅ WHY IT MATTERS (NOW CORRECTLY PLACED) -->
+<div class="section">
+<h2>📘 Why This Book Matters</h2>
+
+<p>
+AI is not just a technology problem. It is a cognitive one.
+</p>
+
+<p class="highlight">
+The real risk is not that AI will become intelligent — but that humans will stop thinking.
+</p>
+
+</div>
+<!-- AUDIENCE -->
+
+<div class="section">
+<h2>👤 Is This Book For You?</h2>
+
+<p>
+If you have ever read an AI-generated answer and felt convinced —  without knowing why — 
+this book is for you.
+</p>
+
+<ul>
+<li><strong>Students and critical thinkers</strong> who want clarity, not just quick answers</li>
+
+<li><strong>Professionals using AI tools</strong> who need to separate reliability from fluency</li>
+
+<li><strong>Educators and researchers</strong> concerned about how AI is reshaping thinking and judgment</li>
+
+<li><strong>Decision-makers</strong> who cannot afford confident but incorrect outputs</li>
+
+<li><strong>Anyone who values independent thinking</strong> in a world of frictionless answers</li>
+</ul>
+
+<p class="highlight">
+This is not a book about rejecting AI.
+</p>
+
+<p>
+It is for curious readers who want to use AI <strong>without surrendering their judgment, while retaining control over their own thinking</strong>.
+</p>
+
+</div>
+<!-- INSIDE SECTION-->
+<div class="section">
+
+<h2>📖 Read a Sample</h2>
+<p>Selected excerpts — and explore how the illusion unfolds, from concept to consequence to practice.</p>
+
+<div class="preview-group">
+
+  <!-- CHAPTER 1 -->
+  <details class="preview-toggle" open>
+    <summary>Chapter 1 — How Humans Recognize Minds (excerpt)</summary>
+    <div class="preview-box">
+
+      <p>
+In a classroom, a student answers a difficult question. She speaks clearly, her explanation unfolds in a steady, logical sequence, and she anticipates objections before they arise. Nothing visible has changed except the arrangement of words. Yet the room shifts. Authority seems to attach itself to her voice.
+</p>
+
+<p>
+Now consider another student — one who hesitates, searches for words, and pauses mid-sentence. Even if this student understands the material more deeply, the hesitation weakens confidence. Certainty is trusted more readily than hesitation.
+</p>
+
+<p>
+Fluency becomes a proxy for intelligence. The inference feels natural. Most of the time, it works.
+</p>
+
+<p class="highlight">
+For most of human history, that inference was rarely wrong.
+</p>
+
+    </div>
+  </details>
+
+  <!-- CHAPTER 5 -->
+  <details class="preview-toggle">
+    <summary>Chapter 5 — Fabricated Authority (excerpt)</summary>
+    <div class="preview-box">
+
+      <p>
+In professional domains — law, medicine, and research — the surface of authority carries consequences. Decisions are made. Citations are trusted. Diagnoses are considered.
+</p>
+
+<p>
+What happens when the markers of authority are reproduced without the grounding that once made them reliable?
+</p>
+
+<p>
+The answer is already visible. A legal brief cites cases that do not exist. The format is correct. The reasoning is structured. The confidence is intact.
+</p>
+
+<p class="highlight">
+What appears as authority may have no foundation at all.
+</p>
+
+    </div>
+  </details>
+ 
+</div>
+<p style="font-size:0.9em; color:#555;">
+Prefer to read more? <a href="https://www.amazon.in/dp/B0GGWJFRQ5" target="_blank">View full sample on Amazon</a>
+</p>
+
+</div>
+
+<!-- INSIDE BOOK-->
+<div class="section">
+<h2>🔍 Inside the Book</h2>
+
+<p><strong>PART 1 — The Broken Signal</strong><br>
+Why humans mistake language for intelligence</p>
+
+<p><strong>PART 2 — When the Illusion Cracks</strong><br>
+Real-world failures: fabricated authority, confident errors</p>
+
+<p><strong>PART 3 — Why the Illusion Persuades</strong><br>
+Psychology of fluency bias and automation bias</p>
+
+<p><strong>PART 4 — The Many Faces of AI</strong><br>
+From text to deepfakes to decision systems</p>
+
+<p><strong>PART 5 — Staying Smart</strong><br>
+Practical tools to resist deception</p>
+
+<p><strong>PART 6 — Living With the Illusion</strong><br>
+Responsibility, institutions, and human judgment</p>
+
+</div>
+
+
+
+<!-- SEO -->
+<div class="section">
+<h2>Understanding AI Illusion</h2>
+
+<h3>Can AI Think?</h3>
+<p>No. AI predicts patterns. It does not understand meaning or reality.</p>
+
+<h3>What Is AI Hallucination?</h3>
+<p>An AI hallucination is a convincing response that appears correct but has no grounding in reality—fabricated facts, citations, or reasoning.</p>
+
+<h3>Why AI Feels Intelligent</h3>
+<p>Human cognition associates fluent language with intelligence. AI exploits this bias.</p>
+
+<h3>Limits of Artificial Intelligence</h3>
+<p>AI lacks grounding, awareness, and the ability to track truth across contexts.</p>
+
+</div>
+
+<!-- FAQ -->
+<div class="section">
+<h2>❓ Frequently Asked Questions</h2>
+
+<details class="preview-toggle">
+  <summary>Is AI truly intelligent?</summary>
+  <p>No. It simulates intelligence through language patterns.</p>
+</details>
+
+<details class="preview-toggle">
+  <summary>Why does AI sound confident?</summary>
+  <p>Confidence is part of how language is generated. It reflects fluency, not knowledge.</p>
+</details>
+
+<details class="preview-toggle">
+  <summary>Why do AI hallucinations happen?</summary>
+  <p>They are not random errors. They arise because AI predicts what sounds right, not what is true.</p>
+</details>
+
+<details class="preview-toggle">
+  <summary>Can AI produce completely false information?</summary>
+  <p>Yes. It can generate detailed, structured, and convincing content that is entirely incorrect. </p>
+</details>
+
+<details class="preview-toggle">
+  <summary>Why do humans trust AI output so easily?</summary>
+  <p>Because fluent, coherent language has historically been a reliable signal of understanding. </p>
+</details>
+
+<details class="preview-toggle">
+  <summary>Can AI replace human thinking?</summary>
+  <p>No. Over-reliance leads to cognitive errors and weakens independent judgment. </p>
+</details>
+<details class="preview-toggle">
+  <summary>How should AI be used safely?</summary>
+  <p>As a tool for exploration—not as a source of unquestioned truth. </p>
+</details>
+<details class="preview-toggle">
+  <summary>Will AI become reliable in the future?</summary>
+  <p>Improvements can reduce errors, but the underlying limitation—lack of grounding—remains. </p>
+</details>
+
+</div>
+</div>
+
+<!-- Contact Author -->
+<div class="section" style="text-align:center;">
+  <p>
+    Have feedback or thoughts about the book?
+  </p>
+
+  <a href="https://bit.ly/illusion-feedback" target="_blank" class="cta">
+    ✍️ Contact the Author / Share Feedback
+  </a>
+</div>
+
+<div class="footer">
+  © 2026 Rajat Kumar Mohanty<br>  
+The Illusion of Intelligence: How AI Deceives — and How to Stay Smart
+</div>
+
+<a href="https://www.amazon.in/dp/B0GGWJFRQ5" target="_blank" class="sticky-cta">
+  👉 Buy Now
+</a>
+</body>
+
+<script>
+document.querySelectorAll('.preview-toggle').forEach((item) => {
+  item.addEventListener('toggle', function() {
+    if (this.open) {
+      document.querySelectorAll('.preview-toggle').forEach((el) => {
+        if (el !== this) el.removeAttribute('open');
+      });
+    }
+  });
+});
+
+const mainCTA = document.getElementById('main-cta');
+const stickyCTA = document.querySelector('.sticky-cta');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      stickyCTA.style.display = 'none';  // hide sticky
+    } else {
+      stickyCTA.style.display = 'block'; // show sticky
+    }
+  });
+});
+
+observer.observe(mainCTA);
+</script>
+</html>
